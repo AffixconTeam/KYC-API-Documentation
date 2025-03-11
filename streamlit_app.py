@@ -47,9 +47,11 @@ with col1:
         "IDV Multi Level Verification": False
     },
     "ReturnItems": {
-        "AD1": "Baiturrahman Kota Banda Aceh Aceh, 23244"
+        "FULL_ADDRESS": "Baiturrahman Kota Banda Aceh Aceh, 23244"
     },
     "Scoring": {
+        "SourceStatus": "Successful",
+        "ErrorMessage": "",
         "Name Match Level": "Exact Match",
         "Full Name Score": 100,
         "First Name Score": 100,
@@ -103,6 +105,8 @@ with col2:
         "FULL_ADDRESS": "  Morelia Michoacán de Ocampo 58116.0"
     },
     "Scoring": {
+        "SourceStatus": "Successful",
+        "ErrorMessage": "",
         "Name Match Level": "Exact Match",
         "Full Name Score": 100,
         "First Name Score": 100,
