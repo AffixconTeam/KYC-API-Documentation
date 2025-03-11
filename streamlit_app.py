@@ -18,7 +18,7 @@ st.code(json.dumps(example_request, indent=2), language="json")
 col1,col2 = st.columns(2)
 with col1:
     st.subheader(':orange[**POST**] Indonesia Residential')
-    st.markdown("🔹 **No. of Records 200.6 million**")
+    st.markdown("🔹 **No. of Records 167 million**")
     st.subheader("📤 Example Request")
     example_request = {
     "country_prefix": "indonisia",
@@ -39,57 +39,33 @@ with col1:
     # Example Response
     st.subheader("📥 Example Response")
     example_response = {
-        "Time": 5.8561692237854,
-        "Data": {
-            "Results": {
-                "NIK Verified": True,
-                "IDV Record Verified": True,
-                "IDV Verified Level": "M1",
-                "IDV Contact Verified Level": "P2",
-                "IDV Multi Level Verification": False
-            },
-            "Description": {
-                "NIK Verified": "ID Number Verified",
-                "IDV Record Verified": "A Verified Record with multiple attributes",
-                "IDV Verified Level": "Full Name Full Address DOB Match",
-                "IDV Contact Verified Level": "Full Name and Mobile",
-                "IDV Multi Level Verification": "Failed MultiSources verification"
-            }
-        },
-        "System Returned Data": {
-            "System Returned Data": {
-                "FirstName": "Arfian",
-                "MiddleName": "Putra ",
-                "Surname": "Marhennata",
-                "AD1": "Baiturrahman Kota Banda Aceh Aceh, 23244",
-                "SUB_DISTRICT": "",
-                "DISTRICT": "",
-                "CITY": "",
-                "REGENCY": "",
-                "PROVINCE": "",
-                "POSTCODE": "",
-                "MOBILE": "08228992992",
-                "EMAIL": "",
-                "DOB": "1998-04-17"
-            }
-        },
-        "Similarity Returned Data": {
-            "Similarity Returned Data": {
-                "Name Match Level": "Exact Match",
-                "Full Name Score": 100,
-                "First Name Score": 100,
-                "Middle Name Score": 100,
-                "Surname Score": 100,
-                "Address Match Level": "Full Match",
-                "Full Address Score": 100,
-                "AddressElement1 Score": 100,
-                "AddressElement2 Score": 100,
-                "AddressElement3 Score": 100,
-                "AddressElement4 Score": 100,
-                "DOB Match": True
-            }
-        }
+    "OverallResults": {
+        "NIK Verified": True,
+        "IDV Record Verified": True,
+        "IDV Verified Level": "M1",
+        "IDV Contact Verified Level": "P2",
+        "IDV Multi Level Verification": False
+    },
+    "ReturnItems": {
+        "AD1": "Baiturrahman Kota Banda Aceh Aceh, 23244"
+    },
+    "Scoring": {
+        "Name Match Level": "Exact Match",
+        "Full Name Score": 100,
+        "First Name Score": 100,
+        "Middle Name Score": 100,
+        "Surname Score": 100,
+        "Address Match Level": "Full Match",
+        "Full Address Score": 100,
+        "AddressElement1 Score": 100,
+        "AddressElement2 Score": 100,
+        "AddressElement3 Score": 100,
+        "AddressElement4 Score": 100,
+        "DOB Match": True,
+        "MobileMatch": True,
+        "EmailMatch": True
     }
+}
     st.code(json.dumps(example_response, indent=2), language="json")
 
 
@@ -116,57 +92,33 @@ with col2:
     # Example Response
     st.subheader("📥 Example Response")
     example_response = {
-    "Time": 3.858513593673706,
-    "Data": {
-        "Results": {
-            "NIK Verified": True,
-            "IDV Record Verified": True,
-            "IDV Verified Level": "M1",
-            "IDV Contact Verified Level": "P2",
-            "IDV Multi Level Verification": False
-        },
-        "Description": {
-            "NIK Verified": "ID Number Verified",
-            "IDV Record Verified": "A Verified Record with multiple attributes",
-            "IDV Verified Level": "Full Name Full Address DOB Match",
-            "IDV Contact Verified Level": "Full Name and Mobile",
-            "IDV Multi Level Verification": "Failed MultiSources verification"
-        }
+    "OverallResults": {
+        "NIK Verified": True,
+        "IDV Record Verified": True,
+        "IDV Verified Level": "M1",
+        "IDV Contact Verified Level": "P2",
+        "IDV Multi Level Verification": False
     },
-    "System Returned Data": {
-        "System Returned Data": {
-            "FirstName": "MARTHA",
-            "MiddleName": "ALEJANDRA CABALLERO",
-            "Surname": "VILLANUEVA",
-            "AD1": "",
-            "SUB_DISTRICT": "",
-            "DISTRICT": "",
-            "CITY": "",
-            "REGENCY": "",
-            "PROVINCE": "",
-            "POSTCODE": "",
-            "MOBILE": "4432339523",
-            "EMAIL": "",
-            "DOB": "1997-02-22"
-        }
+    "ReturnItems": {
+        "FULL_ADDRESS": "  Morelia Michoacán de Ocampo 58116.0"
     },
-    "Similarity Returned Data": {
-        "Similarity Returned Data": {
-            "Name Match Level": "Exact Match",
-            "Full Name Score": 100,
-            "First Name Score": 100,
-            "Middle Name Score": 100,
-            "Surname Score": 100,
-            "Address Match Level": "Full Match",
-            "Full Address Score": 100,
-            "AddressElement1 Score": 100,
-            "AddressElement2 Score": 100,
-            "AddressElement3 Score": 100,
-            "AddressElement4 Score": 100,
-            "DOB Match": True
-        }
+    "Scoring": {
+        "Name Match Level": "Exact Match",
+        "Full Name Score": 100,
+        "First Name Score": 100,
+        "Middle Name Score": 100,
+        "Surname Score": 100,
+        "Address Match Level": "Full Match",
+        "Full Address Score": 100,
+        "AddressElement1 Score": 100,
+        "AddressElement2 Score": 100,
+        "AddressElement3 Score": 100,
+        "AddressElement4 Score": 100,
+        "DOB Match": True,
+        "MobileMatch": True,
+        "EmailMatch": True
     }
-    }
+}
     st.code(json.dumps(example_response, indent=2), language="json")
 # Show API Test Button
 if st.button("Run in Postman"):
