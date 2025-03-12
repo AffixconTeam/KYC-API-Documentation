@@ -39,33 +39,55 @@ with col1:
     # Example Response
     st.subheader("📥 Example Response")
     example_response = {
-    "OverallResults": {
-        "NIK Verified": True,
-        "IDV Record Verified": True,
-        "IDV Verified Level": "M1",
-        "IDV Contact Verified Level": "P2",
-        "IDV Multi Level Verification": False
+    "Summary": {
+        "NIKVerified": True,
+        "IDVRecordVerified": True,
+        "IDVVerifiedLevel": "M1",
+        "IDVContactVerifiedLevel": "P2",
+        "IDVMultiLevelVerification": False
     },
     "ReturnItems": {
-        "FULL_ADDRESS": "Baiturrahman Kota Banda Aceh Aceh, 23244"
+        "ADDRESS": "Baiturrahman Kota Banda Aceh Aceh, 23244"
     },
     "Scoring": {
         "SourceStatus": "Successful",
         "ErrorMessage": "",
-        "Name Match Level": "Exact Match",
-        "Full Name Score": 100,
-        "First Name Score": 100,
-        "Middle Name Score": 100,
-        "Surname Score": 100,
-        "Address Match Level": "Full Match",
-        "Full Address Score": 100,
-        "AddressElement1 Score": 100,
-        "AddressElement2 Score": 100,
-        "AddressElement3 Score": 100,
-        "AddressElement4 Score": 100,
-        "DOB Match": True,
+        "NameMatchLevel": "Exact Match",
+        "FullNameScore": 100,
+        "FirstNameScore": 100,
+        "MiddleNameScore": 100,
+        "SurnameScore": 100,
+        "AddressMatchLevel": "Full Match",
+        "FullAddressScore": 100,
+        "AddressElement1Score": 100,
+        "AddressElement2Score": 100,
+        "AddressElement3Score": 100,
+        "AddressElement4Score": 100,
+        "DOBMatch": True,
         "MobileMatch": True,
         "EmailMatch": True
+    },
+    "Description": {
+        "IDVVerifiedLevel": {
+            "M1": "Full Name Full Address DOBMatch",
+            "N1": "Full Name Full Address Match",
+            "M2": "Full Name DOBMatch",
+            "P1": "Full Name, Mobile, and Email",
+            "P2": "Full Name and Mobile",
+            "P3": "Full Name and Email"
+        },
+        "MultiSourceLevel": {
+            "true": "M1>=2 or (M1>=1 and M2>=1) or (M1>=1 and N1>=1) or (M2>=1 and N1>=1)",
+            "false": "otherwise"
+        },
+        "NameMatchLevels": {
+            "Exact Match": "Full Name Match",
+            "Hyphenated Match": "Hyphenated Match",
+            "Transposed Match": "Transposed Match",
+            "Middle Name Mismatch": "Middle Name Mismatch",
+            "Initial Match": "Initial Match",
+            "SurName only Match": "SurName only Match"
+        }
     }
 }
     st.code(json.dumps(example_response, indent=2), language="json")
@@ -75,52 +97,75 @@ with col2:
     st.subheader(':orange[**POST**] Mexico Residential')
     st.markdown("🔹 **No. of Records 49.5 million**")
     st.subheader("📤 Example Request")
-    example_request = {
-    "country_prefix": "mx",
-    "id_number": "CAVM970222HMNBLR04",
-    "first_name":"MARTHA",
-    "middle_name" : "ALEJANDRA CABALLERO",
-    "sur_name":"VILLANUEVA",
-    "dob":"1997-02-22",
-    "addressElement1": "Morelia",
-    "addressElement2": "Michoacán",
-    "addressElement3": "de Ocampo",
-    "addressElement4": "58116.0",
-    "mobile" : "4432339523",
-    "email" : ""
-    }
+    example_request =    {
+        "country_prefix": "mx",
+        "id_number": "SITM970206HSRQRR01",
+        "first_name":"MARTHA",
+        "middle_name" : "CECILIA SIQUEIROS",
+        "sur_name":"TARAZON",
+        "dob":"1997-02-06",
+        "addressElement1": "Hermosillo",
+        "addressElement2": "Hermosillo",
+        "addressElement3": "Sonora",
+        "addressElement4": "83000.0",
+        "mobile" : "6622145317",
+        "email" : ""
+        }
+     
     st.code(json.dumps(example_request, indent=2), language="json")
 
     # Example Response
     st.subheader("📥 Example Response")
     example_response = {
-    "OverallResults": {
-        "NIK Verified": True,
-        "IDV Record Verified": True,
-        "IDV Verified Level": "M1",
-        "IDV Contact Verified Level": "P2",
-        "IDV Multi Level Verification": False
+    "Summary": {
+        "NIKVerified": True,
+        "IDVRecordVerified": True,
+        "IDVVerifiedLevel": "M1",
+        "IDVContactVerifiedLevel": "P2",
+        "IDVMultiLevelVerification": False
     },
     "ReturnItems": {
-        "FULL_ADDRESS": "  Morelia Michoacán de Ocampo 58116.0"
+        "ADDRESS": "Hermosillo Hermosillo Sonora 83000.0"
     },
     "Scoring": {
         "SourceStatus": "Successful",
         "ErrorMessage": "",
-        "Name Match Level": "Exact Match",
-        "Full Name Score": 100,
-        "First Name Score": 100,
-        "Middle Name Score": 100,
-        "Surname Score": 100,
-        "Address Match Level": "Full Match",
-        "Full Address Score": 100,
-        "AddressElement1 Score": 100,
-        "AddressElement2 Score": 100,
-        "AddressElement3 Score": 100,
-        "AddressElement4 Score": 100,
-        "DOB Match": True,
+        "NameMatchLevel": "Exact Match",
+        "FullNameScore": 100,
+        "FirstNameScore": 100,
+        "MiddleNameScore": 70,
+        "SurnameScore": 100,
+        "AddressMatchLevel": "Full Match",
+        "FullAddressScore": 100,
+        "AddressElement1Score": 100,
+        "AddressElement2Score": 100,
+        "AddressElement3Score": 100,
+        "AddressElement4Score": 100,
+        "DOBMatch": True,
         "MobileMatch": True,
         "EmailMatch": True
+    },
+    "Description": {
+        "IDVVerifiedLevel": {
+            "M1": "Full Name Full Address DOBMatch",
+            "N1": "Full Name Full Address Match",
+            "M2": "Full Name DOBMatch",
+            "P1": "Full Name, Mobile, and Email",
+            "P2": "Full Name and Mobile",
+            "P3": "Full Name and Email"
+        },
+        "MultiSourceLevel": {
+            "true": "M1>=2 or (M1>=1 and M2>=1) or (M1>=1 and N1>=1) or (M2>=1 and N1>=1)",
+            "false": "otherwise"
+        },
+        "NameMatchLevels": {
+            "Exact Match": "Full Name Match",
+            "Hyphenated Match": "Hyphenated Match",
+            "Transposed Match": "Transposed Match",
+            "Middle Name Mismatch": "Middle Name Mismatch",
+            "Initial Match": "Initial Match",
+            "SurName only Match": "SurName only Match"
+        }
     }
 }
     st.code(json.dumps(example_response, indent=2), language="json")
